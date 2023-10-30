@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-nqueens backtracking program to print the coordinates of n queens
-on an nxn grid such that they are all in non-attacking positions
+nqueens
 """
 
 
@@ -36,7 +35,9 @@ if __name__ == "__main__":
         if (already_exists(y)):
             return False
         i = 0
-        while(i < x):
+
+        while (i < x):
+
             if abs(a[i][1] - y) == abs(i - x):
                 return False
             i += 1
