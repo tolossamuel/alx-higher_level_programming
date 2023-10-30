@@ -1,16 +1,25 @@
 #!/usr/bin/python3
-"""Defines a class."""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """Represent rectangle."""
+    """Represent a rectangle.
+
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+        print_symbol (any): The symbol used for string representation.
+    """
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle."""
+        """Initialize a new Rectangle.
 
+        Args:
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
+        """
         type(self).number_of_instances += 1
         self.width = width
         self.height = height
@@ -53,8 +62,14 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the Rectangle with the greater area."""
+        """Return the Rectangle with the greater area.
 
+        Args:
+            rect_1 (Rectangle): The first Rectangle.
+            rect_2 (Rectangle): The second Rectangle.
+        Raises:
+            TypeError: If either of rect_1 or rect_2 is not a Rectangle.
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
@@ -65,13 +80,18 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Return a new Rectangle with width and height equal to size."""
+        """Return a new Rectangle with width and height equal to size.
 
+        Args:
+            size (int): The width and height of the new Rectangle.
+        """
         return (cls(size, size))
 
     def __str__(self):
-        """Return the printable representation of the Rectangle."""
+        """Return the printable representation of the Rectangle.
 
+        Represents the rectangle with the # character.
+        """
         if self.__width == 0 or self.__height == 0:
             return ("")
 
